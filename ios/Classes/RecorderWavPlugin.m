@@ -112,6 +112,7 @@
         _audioRecorder = [[AVAudioRecorder alloc] initWithURL:url settings:setting error:&error];
         _audioRecorder.delegate = self;
         _audioRecorder.meteringEnabled = YES;
+		[self setAudioSession];
         if (error) {
             NSLog(@"创建录音机对象时发生错误，错误信息：%@", error.localizedDescription);
             return nil;
