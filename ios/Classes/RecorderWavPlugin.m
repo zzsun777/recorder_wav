@@ -88,6 +88,7 @@
 /** 开始录音 */
 - (void)start {
     if (![self.audioRecorder isRecording]) {
+        [self.audioRecorder prepareToRecord];
         [self.audioRecorder record];
         self.timer.fireDate = [NSDate distantPast];
     }
